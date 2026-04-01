@@ -302,13 +302,4 @@ Ensures reliability
 
 ---
 
-# 🚀 Getting Started
 
-## Installation
-
-```bash
-git clone https://github.com/yourusername/travo-agent-solution.git
-cd travo-agent-solution
-python -m venv .venv
-.venv\Scripts\activate
-pip install -e .
