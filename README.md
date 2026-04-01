@@ -301,5 +301,49 @@ Ensures reliability
 9. Logs + metrics recorded  
 
 ---
+## 🛠 Technology Stack
 
+### Core Framework & Runtime
+- **Python 3.9+**
+- **FastAPI**
+- **Pydantic**
+
+### AI & Agent Orchestration
+- **LangGraph**
+- **Strands Agents**
+- **DSPy**
+- **LangChain Core**
+
+### Security & Authentication
+- **Python-JOSE**
+- **Passlib + bcrypt**
+- **Cryptography**
+
+### Observability & Monitoring
+- **OpenTelemetry (OTEL)**
+- **Prometheus Client**
+- **LangSmith**
+
+### Data Storage & Caching
+- **Redis**
+- **Neo4j**
+- **Weaviate**
+- **Qdrant**
+
+### Message Queue & Communication
+- **Kafka**
+- **Pika (RabbitMQ)**
+
+### Tools & Integration
+- **FastMCP**
+- **HTTPX**
+- **Requests**
+
+### Configuration & Development
+- **Pydantic Settings**
+- **python-dotenv**
+- **Uvicorn**
+
+### Package Management
+- **pip + pyproject.toml**
 
