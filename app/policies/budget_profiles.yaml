@@ -1,0 +1,10 @@
+# Auto-generated file
+default:
+  max_tokens: 20
+  max_tool_calls: 10
+  max_wall_time_sec: 120
+
+research_heavy:
+  max_tokens: 20
+  max_tool_calls: 25
+  max_wall_time_sec: 300
