@@ -96,7 +96,6 @@ Layered memory system (short-term, episodic, semantic).
 
 → Enables context-aware and personalized responses
 
-![Architecture](./docs/Context_Engineering.png)
 
 ---
 
@@ -175,6 +174,7 @@ Provides a **single source of truth**.
 
 ## 🧠 4. Context Engineering System
 
+![Architecture](./docs/Context_Engineering.png)
 ### Components
 
 * Short-Term Memory (session)
