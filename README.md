@@ -1,4 +1,4 @@
-# 🚁 Production-Grade Multi-Agent Orchestration Architecture: Air Traffic Control for Agentic AI
+# 🚁 Production-Grade Multi-Agent Orchestration Framework
 
 ![Architecture](./docs/architecture.png)
 
@@ -6,344 +6,371 @@
 
 ## 🚀 Overview
 
-**Enterprise-grade multi-agent orchestration system** designed to safely run autonomous AI agents at scale.
+This is an enterprise-grade multi-agent orchestration system designed to safely execute autonomous AI workflows at scale.
 
-Imagine this as an advanced **Air Traffic Control (ATC) system** for AI agents.
+Think of it as an **Air Traffic Control (ATC) system for AI agents**.
 
-Just like real-world ATC:
-- Coordinates multiple independent aircraft  
-- Enforces strict safety rules  
-- Monitors everything in real time  
-- Prevents collisions and unsafe behavior  
+Just like ATC:
 
+* Coordinates multiple independent agents
+* Enforces strict safety and security rules
+* Tracks every action in real time
+* Prevents unsafe or inefficient execution
 
-Agents collaborate intelligently — within strict boundaries of:
-- 🔐 Security  
-- 💸 Cost  
-- 📊 Observability  
-- ⚙️ Reliability  
+Agents collaborate intelligently within strict boundaries of:
+
+* 🔐 Security
+* 💸 Cost
+* 📊 Observability
+* ⚙️ Reliability
 
 ---
 
 # 🧠 Framework Overview & Core Techniques
 
-This is not just a collection of agents — it is a **structured framework for building production-grade agentic systems**.
+This is not just an agent pipeline — it is a **production-grade system for building reliable, safe, and scalable agentic applications**.
 
 ---
 
 ## ⚙️ Core Techniques
 
 ### 🧠 Multi-Agent Decomposition
-Break complex tasks into smaller steps handled by specialized agents.
 
-→ Improves reasoning, reduces hallucination, enables parallelism  
+Break complex queries into structured steps handled by specialized agents.
+
+→ Improves reasoning quality and reduces hallucinations
 
 ---
 
 ### 🔄 State-Based Orchestration (Blackboard Pattern)
-Agents communicate via a shared state instead of direct calls.
 
-→ Loose coupling, better traceability  
+All agents communicate through a shared state instead of direct messaging.
+
+→ Enables loose coupling and better traceability
 
 ---
 
 ### 🧭 Graph-Based Execution (LangGraph)
-Workflows are defined as a **stateful graph**, not linear chains.
 
-→ Supports branching, retries, and dynamic flows  
+Workflows are defined as a **stateful graph**, not a linear chain.
 
----
-
-### 🧱 Agent Abstraction (Strands Agents)
-Standardized agent interface with built-in hooks.
-
-→ Faster development, consistent behavior  
+→ Supports loops, retries, and dynamic execution paths
 
 ---
 
-### 🔌 Dynamic Tool Calling (MCP)
-Agents discover and use tools at runtime.
+### 🔐 Zero-Trust Security Model
 
-→ No glue code, highly extensible  
+Every interaction (user, agent, tool) is verified.
+
+→ Prevents unauthorized actions and internal abuse
 
 ---
 
-### 🔐 Zero-Trust Security
-Every action is verified.
+### 🎟️ JIT (Just-In-Time) Privileges
 
-→ Prevents unauthorized execution  
+Agents receive temporary scoped permissions.
+
+→ Minimizes risk and reduces attack surface
 
 ---
 
 ### 💸 Budget-Aware Execution
-Tracks tokens, time, and tool usage.
 
-→ Prevents cost explosion  
+Tracks tokens, tool calls, and runtime.
+
+→ Prevents cost overruns and infinite loops
 
 ---
 
 ### 📊 Observability-First Design
-Everything is logged, traced, and measurable.
 
-→ Debuggable and production-ready  
+Full tracing, logging, and metrics.
+
+→ Makes the system debuggable and production-ready
 
 ---
 
-### 🧠 Layered Memory
-Short-term + long-term + semantic memory.
+### 🧠 Context Engineering
 
-→ Context-aware and efficient agents  
+Layered memory system (short-term, episodic, semantic).
+
+→ Enables context-aware and personalized responses
+
+![Architecture](./docs/Context_Engineering.png)
 
 ---
 
 ## 🧩 Mental Model
 
-- Agents → Aircraft  
-- Orchestrator → Air Traffic Control  
-- State → Airspace  
-- Security → Flight rules  
-- Budget → Fuel  
-- Observability → Radar  
+* Agents → Aircraft
+* Orchestrator → Air Traffic Control
+* State → Airspace
+* Security → Flight rules
+* Budget → Fuel
+* Observability → Radar
 
 ---
 
 # 🏗️ Architecture: Layer-by-Layer Breakdown
 
-## ✈️ 1. Ingress & Supervisory Gateway
+## ✈️ 1. Ingress & Security Gateway
 
 ### What it does
-- Authentication & rate limiting  
-- Input validation & prompt injection protection  
-- Intent classification  
-- Budget allocation  
-- Trace initialization  
+
+* JWT authentication
+* RBAC authorization
+* Prompt injection detection
+* Request validation
+* Trace initialization
 
 ### Why it matters
-Acts as the **control tower entry point**.
+
+Acts as the **secure entry point** to the system.
 
 ### If missing
-- 🚨 Security vulnerabilities  
-- 💸 Uncontrolled costs  
-- 🔓 Unauthorized access  
+
+* 🚨 Unauthorized access
+* 🔓 Prompt injection attacks
+* 💸 Uncontrolled usage
 
 ---
 
-## 🧭 2. Strategic Core: Discovery & Orchestration
-
-### Multi-Agent Orchestrator
+## 🧭 2. Orchestrator (Strategic Core)
 
 ### What it does
-- Breaks tasks into steps  
-- Routes work across agents  
-- Controls execution flow  
+
+* Breaks tasks into steps (Planner)
+* Routes execution (Delegator)
+* Coordinates agents (Graph execution)
 
 ### Why it matters
-Enables **coordinated intelligence**
+
+Transforms raw queries into structured workflows.
 
 ### If missing
-- ❌ No workflows  
-- 🤖 Monolithic agents  
+
+* ❌ No multi-step reasoning
+* 🤖 Monolithic LLM behavior
 
 ---
 
-### Agent Control Plane / Lifecycle
+## 🔄 3. Shared State Bus (AgentState)
 
 ### What it does
-- Manages agent lifecycle  
-- Registers capabilities  
-- Controls execution  
+
+* Stores messages, context, results
+* Tracks execution progress
+* Enables agent communication
 
 ### Why it matters
-Keeps the system scalable and manageable
+
+Provides a **single source of truth**.
 
 ### If missing
-- Chaos in execution  
-- Hard to scale  
+
+* ❌ No coordination
+* 🔁 Duplicate computation
 
 ---
 
-## 🔄 3. Shared State Bus (Blackboard Pattern)
-
-### What it does
-- Shared communication layer for agents  
-- Context exchange  
-- Intermediate results storage  
-
-### Why it matters
-Enables **collaboration without tight coupling**
-
-### If missing
-- ❌ No coordination  
-- 🔁 Duplicate work  
-
----
-
-## 🧠 4. Layered Memory & Context Manager
+## 🧠 4. Context Engineering System
 
 ### Components
-- Short-term memory  
-- Episodic memory  
-- Semantic memory  
+
+* Short-Term Memory (session)
+* Episodic Memory (past interactions)
+* Semantic Memory (knowledge base)
 
 ### What it does
-Maintains context across tasks and time
+
+Retrieves, validates, and injects context into agent prompts.
 
 ### Why it matters
-Improves efficiency, personalization, and accuracy
+
+Improves accuracy, personalization, and efficiency.
 
 ### If missing
-- 🤯 Stateless system  
-- 📉 Poor UX  
+
+* 🤯 Stateless system
+* 📉 Poor response quality
 
 ---
 
-## 🧩 5. Execution Layer (Dynamic Plan)
+## 🧩 5. Execution Layer (Agents)
 
 ### Core Agents
-- Planner  
-- Researcher  
-- Summarizer  
-- Critic  
+
+* Planner → creates plan
+* Researcher → fetches data
+* Critic → validates output
 
 ### Why it matters
-Specialization ensures **high-quality outputs**
+
+Specialization leads to **better reasoning and reliability**.
 
 ### If missing
-- ❌ Weak reasoning  
-- ❌ Hallucinations  
+
+* ❌ Weak outputs
+* ❌ No validation
 
 ---
 
 ## 🛠️ 6. Tooling Layer
 
 ### What it does
-- API integrations  
-- External tools  
-- Search capabilities  
+
+* External APIs (search, data)
+* Tool execution via MCP
 
 ### Why it matters
-Enables real-world interaction
+
+Connects agents to the real world.
 
 ### If missing
-- 🤖 Only reasoning  
-- ❌ No action  
+
+* 🤖 Only theoretical reasoning
+* ❌ No real data
 
 ---
 
-## 📊 7. Observability & Monitoring
+## 🔐 7. Security Layer
 
 ### Components
-- Metrics  
-- Tracing  
-- Logging  
+
+* JWT authentication
+* RBAC authorization
+* Agent PKI (RSA signing)
+* Zero Trust enforcement
+* JIT tokens
 
 ### Why it matters
-Full visibility into system behavior
+
+Ensures safe execution across users and agents.
 
 ### If missing
-- 🔍 No debugging  
-- 💣 Silent failures  
+
+* 🚨 System compromise risk
+* 🔓 Agent misuse
 
 ---
 
-## 🔐 8. Security Foundations (CIA Triad)
-
-### Confidentiality
-- Encryption, secret management  
-
-### Integrity
-- State validation, signatures  
-
-### Availability
-- Rate limiting, circuit breakers  
-
-### Why it matters
-Ensures safe, reliable execution
-
----
-
-## 💸 9. Budget & Resource Governance
+## 💸 8. Budget & Resource Governance
 
 ### What it does
-- Tracks tokens, time, tool usage  
+
+* Limits tokens
+* Limits tool calls
+* Limits execution time
 
 ### Why it matters
-Controls cost and prevents abuse
+
+Controls cost and prevents runaway execution.
 
 ### If missing
-- 💸 Cost explosion  
+
+* 💸 Cost explosion
+* 🔁 Infinite loops
 
 ---
 
-## 🚨 10. Dead Letter Queue (DLQ)
+## 📊 9. Observability & Monitoring
 
-### What it does
-Handles failed executions
+### Components
+
+* Structured logging
+* Distributed tracing (LangSmith, OTEL)
+* Metrics tracking
 
 ### Why it matters
-Ensures reliability
+
+Provides full visibility into system behavior.
 
 ### If missing
-- ❌ Lost failures  
+
+* 🔍 Impossible debugging
+* 💣 Silent failures
+
+---
+
+## 🧹 10. Failure Handling (DLQ - Future)
+
+### What it does
+
+Captures failed executions for retry/debugging.
+
+### Why it matters
+
+Improves reliability and fault tolerance.
+
+### If missing
+
+* ❌ Lost failures
+* ❌ No recovery path
 
 ---
 
 # 🔄 End-to-End Flow
 
-1. User request enters gateway  
-2. Security + validation applied  
-3. Budget assigned  
-4. Orchestrator builds plan  
-5. Agents execute collaboratively  
-6. Tools invoked dynamically  
-7. Critic validates output  
-8. Response returned  
-9. Logs + metrics recorded  
+1. User sends request
+2. Gateway validates + authenticates
+3. Authorization checks permissions
+4. Prompt guard sanitizes input
+5. Context is retrieved and injected
+6. Planner creates execution plan
+7. Delegator routes tasks
+8. Agents execute with tools
+9. Critic validates results
+10. Response returned
+11. Memory updated
+12. Logs + traces recorded
 
 ---
-## 🛠 Technology Stack
 
-### Core Framework & Runtime
-- **Python 3.9+**
-- **FastAPI**
-- **Pydantic**
+# 🛠 Technology Stack
 
-### AI & Agent Orchestration
-- **LangGraph**
-- **Strands Agents**
-- **DSPy**
-- **LangChain Core**
+### Core Backend
 
-### Security & Authentication
-- **Python-JOSE**
-- **Passlib + bcrypt**
-- **Cryptography**
+* Python
+* FastAPI
+* Pydantic
 
-### Observability & Monitoring
-- **OpenTelemetry (OTEL)**
-- **Prometheus Client**
-- **LangSmith**
+### Orchestration
 
-### Data Storage & Caching
-- **Redis**
-- **Neo4j**
-- **Weaviate**
-- **Qdrant**
+* LangGraph
 
-### Message Queue & Communication
-- **Kafka**
-- **Pika (RabbitMQ)**
+### AI Models
 
-### Tools & Integration
-- **FastMCP**
-- **HTTPX**
-- **Requests**
+* Groq (LLMs)
 
-### Configuration & Development
-- **Pydantic Settings**
-- **python-dotenv**
-- **Uvicorn**
+### Security
 
-### Package Management
-- **pip + pyproject.toml**
+* Python-JOSE
+* Passlib
+* Cryptography
 
+### Memory & Context
+
+* FAISS / Vector DB
+* Custom memory layers
+
+### Observability
+
+* OpenTelemetry
+* LangSmith
+
+### Tools
+
+* Tavily Search API
+
+---
+
+# 🧠 Final Thought
+
+This is not just an LLM wrapper — it is a **secure, context-aware, multi-agent operating system** that:
+
+* Thinks in structured steps
+* Remembers and learns from interactions
+* Enforces strict security boundaries
+* Validates its own outputs
+
+Built for **real-world production systems**, not demos.
